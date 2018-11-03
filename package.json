@@ -1,0 +1,24 @@
+{
+  "name": "my-weather",
+  "version": "1.0.0",
+  "description": "A little application that shows you your current weather where you are. Built to practice React, Redux and working with APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luke-Rogerson/my-weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luke-Rogerson/my-weather/issues"
+  },
+  "homepage": "https://github.com/Luke-Rogerson/my-weather#readme",
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1"
+  }
+}

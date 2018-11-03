@@ -12,7 +12,9 @@ class CurrentWeather extends Component {
   render () {
     return (
       <div>
-        <p>You are in <b>{this.props.location}</b>.</p>
+        <div><p>You are in <b>{this.props.location}</b>.</p></div>
+        <div><p>It's currently {this.props.temperature}°C.</p></div>
+        <div><p><b>{this.props.weather}</b></p></div>
       </div>
     )
   }
@@ -20,7 +22,9 @@ class CurrentWeather extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.weather ? state.weather.name : ''
+    location: state.weather ? state.weather.name : '',
+    weather: state.weather ? state.weather.weather[0].main : '',
+    temperature: state.weather ? state.weather.main.temp : ''
   };
 };
 
