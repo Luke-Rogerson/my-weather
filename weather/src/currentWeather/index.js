@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { saveCurrentWeatherData } from '../redux/actions';
+import './style.css';
 
 
 class CurrentWeather extends Component {
 
   render () {
     return (
-      <div>
+      <div className="weather-details">
         <div><p>You are in <b>{this.props.location}</b>.</p></div>
-        <div><p>It's currently {this.props.temperature}°C.</p></div>
+        <div><p>It's currently <b>{this.props.temperature}°C</b>.</p></div>
         <div><p><b>{this.props.weather}</b></p></div>
       </div>
     )

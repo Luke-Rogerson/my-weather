@@ -12,20 +12,13 @@ const API_KEY = 'ef20e7b5004420630329030aaf63d131';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      location: []
-    }
-  }
-
-  componentDidMount = () => {
+  componentDidMount = async () => {
+    await this.getUserLocation();
     this.fetchWeather();
-    this.getUserLocation();
   }
 
   fetchWeather = () => {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=41.39496460000001&lon=2.1975748999999998&appid=ef20e7b5004420630329030aaf63d131&units=metric')
+    fetch(`${API_ADDRESS}lat=${this.props.lat}&lon=${this.props.long}&appid=${API_KEY}&units=metric`)
       .then(
         response => response.json())
       .then(
@@ -53,19 +46,25 @@ class App extends Component {
 
   render () {
     return (
+      this.props.lat && this.props.long ?
       <div className="container">
         <h1>YOUR WEATHER!</h1>
         <CurrentWeather />
-        <h3>{this.state && this.state.location ? JSON.stringify(this.state.location) : 'No data yet'}</h3>
         <p>Designed by Luke Rogerson.</p>
+      </div> :
+      <div className="container">
+      <h3>Loading...</h3>
       </div>
     );
   }
 }
 
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return {
+    lat: state.lat ? state.lat : '',
+    long: state.long ? state.long : '',
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
