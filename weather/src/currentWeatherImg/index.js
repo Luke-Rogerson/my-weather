@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import './icons.css'
 import { connect } from 'react-redux';
-
-// rain, drizzle, thunderstorm
-
-// DONE: clouds, clear, atmosphere, snow, rain, drizzle,
+import './icons.css'
 
 class Icons extends Component {
 
@@ -13,43 +9,43 @@ class Icons extends Component {
     switch (this.props.weatherType) {
       case 'Clouds' || 'Atmosphere':
         return (
-          <div class="icon cloudy">
-            <div class="cloud"></div>
-            <div class="cloud"></div>
+          <div className="icon cloudy">
+            <div className="cloud"></div>
+            <div className="cloud"></div>
           </div>
         )
       case 'Clear':
         return (
-          <div class="icon sunny">
-            <div class="sun">
-              <div class="rays"></div>
+          <div className="icon sunny">
+            <div className="sun">
+              <div className="rays"></div>
             </div>
           </div>
         )
       case 'Snow':
         return (
-          <div class="icon flurries">
-            <div class="cloud"></div>
-            <div class="snow">
-              <div class="flake"></div>
-              <div class="flake"></div>
+          <div className="icon flurries">
+            <div className="cloud"></div>
+            <div className="snow">
+              <div className="flake"></div>
+              <div className="flake"></div>
             </div>
           </div>
         )
       case 'Rain' || 'Drizzle':
         return (
-          <div class="icon rainy">
-            <div class="cloud"></div>
-            <div class="rain"></div>
+          <div className="icon rainy">
+            <div className="cloud"></div>
+            <div className="rain"></div>
           </div>
         )
       case 'Thunderstorm':
         return (
-          <div class="icon thunder-storm">
-            <div class="cloud"></div>
-            <div class="lightning">
-              <div class="bolt"></div>
-              <div class="bolt"></div>
+          <div className="icon thunder-storm">
+            <div className="cloud"></div>
+            <div className="lightning">
+              <div className="bolt"></div>
+              <div className="bolt"></div>
             </div>
           </div>
         )

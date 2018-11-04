@@ -9,7 +9,6 @@ import CurrentWeatherIcon from './currentWeatherImg'
 
 const API_ADDRESS = 'https://api.openweathermap.org/data/2.5/weather?'
 const API_KEY = 'ef20e7b5004420630329030aaf63d131';
-// https://api.openweathermap.org/data/2.5/weather?lat=41.39496460000001&lon=2.1975748999999998&appid=ef20e7b5004420630329030aaf63d131'
 
 class App extends Component {
 
@@ -25,7 +24,7 @@ class App extends Component {
       if (!geolocation) {
         reject(console.log('No location data'));
       }
-      geolocation.getCurrentPosition((position, ) => {
+      geolocation.getCurrentPosition((position) => {
         resolve(position);
       }, () => {
         reject(console.log('Location permission denied'));
@@ -41,7 +40,7 @@ class App extends Component {
     fetch(`${API_ADDRESS}lat=${this.props.lat}&lon=${this.props.long}&appid=${API_KEY}&units=metric`)
       .then(
         response => response.json())
-      .catch((e) => console.log('Error getting data from API'))
+      .catch(() => console.log('Error getting data from API'))
       .then(
         data => this.props.saveCurrentWeatherData(data))
       .catch(() => console.log('Error saving data in store'))
@@ -52,13 +51,15 @@ class App extends Component {
       this.props.lat && this.props.long ?
         <div className="container">
           <h1>YOUR WEATHER!</h1>
+          <div className="weatherDisplay">
           <CurrentWeatherIcon className="container"/>
-          <CurrentWeather />
+          <CurrentWeather className="container"/>
+          </div>
           <p>Designed by Luke Rogerson.</p>
         </div>
         :
         <div className="container">
-          <h3>Loading...</h3>
+          <h2>Loading...</h2>
         </div>
     );
   }

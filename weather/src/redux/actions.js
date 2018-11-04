@@ -3,11 +3,6 @@ export const saveCurrentWeatherData = (weatherData) => ({
   weatherData
 });
 
-// export const saveUserLocationCoordinates = (coordinates) => ({
-//   type: 'SAVE_USER_LOCATION',
-//   coordinates
-// });
-
 export const saveUserLocationLat = (lat) => ({
   type: 'SAVE_USER_LAT',
   lat

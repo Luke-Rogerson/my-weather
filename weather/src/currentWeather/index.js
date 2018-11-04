@@ -9,9 +9,8 @@ class CurrentWeather extends Component {
   render () {
     return (
       <div className="weather-details">
-        <div><p>You are in <b>{this.props.location}</b>.</p></div>
-        <div><p>It's currently <b>{this.props.temperature}°C</b>.</p></div>
-        <div><p><b>{this.props.weather}</b></p></div>
+        <div><h2>You are in <b>{this.props.location}</b>.</h2></div>
+        <div><h2>It's currently <b>{this.props.temperature}°C</b>.</h2></div>
       </div>
     )
   }
