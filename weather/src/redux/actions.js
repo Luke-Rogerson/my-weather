@@ -3,7 +3,18 @@ export const saveCurrentWeatherData = (weatherData) => ({
   weatherData
 });
 
-export const getUserLocationCoordinates = (coordinates) => ({
-  type: 'GET_USER_LOCATION',
-  coordinates
-})
+// export const saveUserLocationCoordinates = (coordinates) => ({
+//   type: 'SAVE_USER_LOCATION',
+//   coordinates
+// });
+
+export const saveUserLocationLat = (lat) => ({
+  type: 'SAVE_USER_LAT',
+  lat
+});
+
+export const saveUserLocationLong = (long) => ({
+  type: 'SAVE_USER_LONG',
+  long
+});
+
