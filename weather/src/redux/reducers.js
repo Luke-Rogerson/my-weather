@@ -1,5 +1,3 @@
-import {Map} from 'immutable';
-
 const weatherData = (state = {}, action) => {
   switch (action.type) {
     case ('SAVE_USER_LAT'):
